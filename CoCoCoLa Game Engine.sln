@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Application-Sandbox", "Application-Sandbox\Application-Sandbox.vcxproj", "{436504FD-870C-4504-AF88-B61033D63513}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoCoCoLa Game Engine", "CoCoCoLa Game Engine\CoCoCoLa Game Engine.vcxproj", "{4FD32D8F-75F4-4F17-8A05-49CA87DCF86D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FD32D8F-75F4-4F17-8A05-49CA87DCF86D}.Debug|x64.ActiveCfg = Debug|x64
+		{4FD32D8F-75F4-4F17-8A05-49CA87DCF86D}.Debug|x64.Build.0 = Debug|x64
+		{4FD32D8F-75F4-4F17-8A05-49CA87DCF86D}.Release|x64.ActiveCfg = Release|x64
+		{4FD32D8F-75F4-4F17-8A05-49CA87DCF86D}.Release|x64.Build.0 = Release|x64
+		{436504FD-870C-4504-AF88-B61033D63513}.Debug|x64.ActiveCfg = Debug|x64
+		{436504FD-870C-4504-AF88-B61033D63513}.Debug|x64.Build.0 = Debug|x64
+		{436504FD-870C-4504-AF88-B61033D63513}.Release|x64.ActiveCfg = Debug|x64
+		{436504FD-870C-4504-AF88-B61033D63513}.Release|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02C6352D-07CE-41B3-8D8C-BA289305884A}
+	EndGlobalSection
+EndGlobal
