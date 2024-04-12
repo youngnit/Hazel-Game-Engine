@@ -4,8 +4,8 @@ bin/
 bin-int/
 
 #文件
-CoCo*.sln
-/App*/App*.vcxproj
+*.sln
+/Application-Sandbox/Application-Sandbox.vcxproj
 /CoCo*/CoCo*.vcxproj
 /CoCo*/CoCo*.vcxproj.filters
-/App*/App*.vcxproj.user
+/Application-Sandbox/Application-Sandbox.vcxproj.user
