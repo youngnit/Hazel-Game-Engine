@@ -4,3 +4,7 @@ bin/
 bin-int/
 
 #文件
+*.sin
+*.vcxproj
+*.filters
+*.user

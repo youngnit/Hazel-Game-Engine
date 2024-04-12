@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Application-Sandbox", "Application-Sandbox\Application-Sandbox.vcxproj", "{F537EAB5-6199-C7C3-EA06-0E765667FE82}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoCoCoLa-Game-Engine", "CoCoCoLa-Game-Engine\CoCoCoLa-Game-Engine.vcxproj", "{324E5F86-1EDD-E84F-C7FB-FC4AB369F9F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Dist|x64 = Dist|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F537EAB5-6199-C7C3-EA06-0E765667FE82}.Debug|x64.ActiveCfg = Debug|x64
+		{F537EAB5-6199-C7C3-EA06-0E765667FE82}.Debug|x64.Build.0 = Debug|x64
+		{F537EAB5-6199-C7C3-EA06-0E765667FE82}.Dist|x64.ActiveCfg = Dist|x64
+		{F537EAB5-6199-C7C3-EA06-0E765667FE82}.Dist|x64.Build.0 = Dist|x64
+		{F537EAB5-6199-C7C3-EA06-0E765667FE82}.Release|x64.ActiveCfg = Release|x64
+		{F537EAB5-6199-C7C3-EA06-0E765667FE82}.Release|x64.Build.0 = Release|x64
+		{324E5F86-1EDD-E84F-C7FB-FC4AB369F9F5}.Debug|x64.ActiveCfg = Debug|x64
+		{324E5F86-1EDD-E84F-C7FB-FC4AB369F9F5}.Debug|x64.Build.0 = Debug|x64
+		{324E5F86-1EDD-E84F-C7FB-FC4AB369F9F5}.Dist|x64.ActiveCfg = Dist|x64
+		{324E5F86-1EDD-E84F-C7FB-FC4AB369F9F5}.Dist|x64.Build.0 = Dist|x64
+		{324E5F86-1EDD-E84F-C7FB-FC4AB369F9F5}.Release|x64.ActiveCfg = Release|x64
+		{324E5F86-1EDD-E84F-C7FB-FC4AB369F9F5}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
