@@ -4,7 +4,8 @@ bin/
 bin-int/
 
 #文件
-*.sin
-*.vcxproj
-*.filters
-*.user
+CoCo*.sln
+/App*/App*.vcxproj
+/CoCo*/CoCo*.vcxproj
+/CoCo*/CoCo*.vcxproj.filters
+/App*/App*.vcxproj.user
