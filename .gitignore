@@ -4,8 +4,8 @@ bin/
 bin-int/
 
 #文件
-*.sln
-/Application-Sandbox/Application-Sandbox.vcxproj
+CoCoCoLa-Game-Engine.sln
 /CoCo*/CoCo*.vcxproj
 /CoCo*/CoCo*.vcxproj.filters
 /Application-Sandbox/Application-Sandbox.vcxproj.user
+/Application-Sandbox/Application-Sandbox.vcxproj
