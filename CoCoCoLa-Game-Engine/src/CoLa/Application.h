@@ -7,7 +7,7 @@ namespace Cola
     {
     public:
         Application();
-        virtual ~Application();
+        virtual ~Application() = 0;
         void Run();
         
     };

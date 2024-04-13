@@ -26,7 +26,8 @@ project "CoCoCoLa-Game-Engine"
 
     includedirs
     {
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/vendor/spdlog/include",
+        "%{prj.name}/src"
     }
     
     
@@ -34,7 +35,7 @@ project "CoCoCoLa-Game-Engine"
     filter "system:windows"
         cppdialect "C++17"
         staticruntime "On"
-        systemversion "10.0.22621.0"
+        systemversion "latest"
 
         defines
         {
@@ -93,7 +94,7 @@ project "Application-Sandbox"
     filter "system:windows"
         cppdialect "C++17"
         staticruntime "On"
-        systemversion "10.0.22621.0"
+        systemversion "latest"
 
         defines
         {
