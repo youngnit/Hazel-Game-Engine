@@ -2,9 +2,6 @@
 
 #include "Events.h"
 
-#include <sstream>
-
-
 namespace Cola
 {
     class COLA_API WindowResizeEvent : public Event
@@ -28,8 +25,8 @@ namespace Cola
     {
     public:
         WindowCloseEvent() {}
-        EVENT_CLASS_CATEGORY(WindowClose)
         EVENT_CLASS_TYPE(WindowClose)
+        EVENT_CLASS_CATEGORY(EventCategoryApplication)
     };
     class COLA_API AppTickEvent :public Event
     {

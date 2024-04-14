@@ -3,14 +3,13 @@
 //目前处理方式是阻塞
 
 #include "CoLa/Core.h"
-#include <functional>
-#include <string>
+
 
 
 namespace Cola {
 
 
-	enum EventType
+	enum class EventType
 	{
 		None = 0,
 		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
@@ -37,7 +36,7 @@ namespace Cola {
 
 	class COLA_API Event
 	{
-		friend Class EventDispatcher;
+		friend class EventDispatcher;
 	public:
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
@@ -55,7 +54,7 @@ namespace Cola {
 	public:
 		EventDispatcher(Event& event) :m_Event(event){}
 		template<typename T>
-		bool Dispatch(EventFn<T> func)
+		bool Dispatch(Eventfn<T> func)
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{

@@ -1,9 +1,7 @@
 ﻿#pragma once
 
-
 #include "Events.h"
 
-#include <sstream>
 
 namespace Cola
 {

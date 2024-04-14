@@ -1,4 +1,6 @@
-﻿#include <Cola.h>
+﻿#include "clpch.h"
+
+#include <Cola.h>
 
 class Sandbox : public Cola::Application
 {
@@ -17,4 +19,3 @@ Cola::Application* Cola::CreateApplication()
 {
     return new Sandbox();
 }
-

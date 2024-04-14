@@ -13,8 +13,13 @@ project "CoCoCoLa-Game-Engine"
     location "%{prj.name}"
     kind "SharedLib"
     language "C++"
+
+
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+    pchheader "clpch.h"
+    pchsource "CoCoCoLa-Game-Engine/src/clpch.cpp"
 
     files
     {
@@ -115,4 +120,3 @@ project "Application-Sandbox"
 
     filter "configurations:Dist"
         defines "COLA_DIST"
-        optimize "On"
