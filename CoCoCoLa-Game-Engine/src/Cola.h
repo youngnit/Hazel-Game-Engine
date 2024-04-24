@@ -2,15 +2,15 @@
 
 // 给SandboxApp准备的(应用程序)
 
-#include "CoLa/Core.h"
-#include "Cola/Application.h"
-#include "CoLa/Log.h"
-#include "Cola/Events/ApplicationEvents.h"
-#include "Cola/Events/Events.h"
-#include "Cola/Events/ApplicationEvents.h"
-#include "CoLa/Events/KeyEvents.h"
-#include "CoLa/Events/MouseEvents.h"
+#include "COLA/Core.h"
+#include "COLA/Application.h"
+#include "COLA/Log.h"
+#include "COLA/Events/ApplicationEvents.h"
+#include "COLA/Events/Events.h"
+#include "COLA/Events/ApplicationEvents.h"
+#include "COLA/Events/KeyEvents.h"
+#include "COLA/Events/MouseEvents.h"
 
 //----------程序入口点-----------
-#include "Cola/EntryPoint.h"
+#include "COLA/EntryPoint.h"
 //-----------------------------

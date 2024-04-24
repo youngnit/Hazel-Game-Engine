@@ -9,6 +9,11 @@ workspace "CoCoCoLa-Game-Engine"
     }
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "CoCoCoLa-Game-Engine/vendor/GLFW/include"
+
+include "CoCoCoLa-Game-Engine/vendor/GLFW"
+
 project "CoCoCoLa-Game-Engine"
     location "%{prj.name}"
     kind "SharedLib"
@@ -32,9 +37,14 @@ project "CoCoCoLa-Game-Engine"
     includedirs
     {
         "%{prj.name}/vendor/spdlog/include",
-        "%{prj.name}/src"
+        "%{prj.name}/src",
+        "%{IncludeDir.GLFW}"
     }
-    
+    links
+    {
+        "GLFW",
+        "opengl32.lib"
+    }
     
 
     filter "system:windows"
@@ -60,7 +70,12 @@ project "CoCoCoLa-Game-Engine"
     filter "configurations:Debug"
         defines "COLA_DEBUG"
         symbols "On"
-        
+        defines
+        {
+            "COLA_ENABLE_ASSERTS"
+        }
+
+
     filter "configurations:Release"
         defines "COLA_RELEASE"
         optimize "On"

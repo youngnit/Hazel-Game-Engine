@@ -2,7 +2,7 @@
 
 #include "Events.h"
 
-namespace Cola
+namespace COLA
 {
 
     class MouseMovedEvent :public Event
@@ -14,7 +14,7 @@ namespace Cola
         std::string ToString() const override
         {
             std::stringstream ss;
-            ss << "MouseMovedEvent: " << GetX() << "," << GetY();
+            ss << "鼠标移动事件: " << GetX() << "," << GetY();
             return ss.str();
         }
         EVENT_CLASS_TYPE(MouseMoved)
@@ -31,7 +31,7 @@ namespace Cola
         std::string ToString() const override
         {
             std::stringstream ss;
-            ss << "MouseScrolledEvent: " << GetXOffset() << "," << GetYOffset();
+            ss << "鼠标滚动事件: " << GetXOffset() << "," << GetYOffset();
             return ss.str();
         }
         EVENT_CLASS_TYPE(MouseScrolled)
@@ -55,9 +55,10 @@ namespace Cola
         std::string ToString() const override
         {
             std::stringstream ss;
-            ss << "MouseButtonPressedEvent: " << m_Button;
+            ss << "鼠标按键按下事件: " << m_Button;
             return ss.str();
         }
+        EVENT_CLASS_TYPE(MouseButtonPressed)
     };
     class COLA_API MouseButtonReleasedEvent : public MouseButtonEvent
     {
@@ -66,8 +67,9 @@ namespace Cola
         std::string ToString() const override
         {
             std::stringstream ss;
-            ss << "MouseButtoReleasedEvent: " << m_Button;
+            ss << "鼠标按键释放事件: " << m_Button;
             return ss.str();
         }
+        EVENT_CLASS_TYPE(MouseButtonReleased)
     };
 }

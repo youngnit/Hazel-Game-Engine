@@ -2,11 +2,11 @@
 
 //目前处理方式是阻塞
 
-#include "CoLa/Core.h"
+#include "COLA/Core.h"
 
 
 
-namespace Cola {
+namespace COLA {
 
 
 	enum class EventType

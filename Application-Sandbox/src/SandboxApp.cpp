@@ -2,7 +2,7 @@
 
 #include <Cola.h>
 
-class Sandbox : public Cola::Application
+class Sandbox : public COLA::Application
 {
 public:
     Sandbox() 
@@ -15,7 +15,7 @@ public:
     }
 };
 
-Cola::Application* Cola::CreateApplication()
+COLA::Application* COLA::CreateApplication()
 {
     return new Sandbox();
 }

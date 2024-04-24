@@ -1,0 +1,3 @@
+[submodule "CoCoCoLa-Game-Engine/vendor/GLFW"]
+	path = CoCoCoLa-Game-Engine/vendor/GLFW
+	url = https://github.com/TheCherno/glfw

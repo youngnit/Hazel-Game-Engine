@@ -2,14 +2,14 @@
 
 
 #ifdef COLA_PLATFORM_WINDOWS
-extern  Cola::Application* Cola::CreateApplication();
+extern  COLA::Application* COLA::CreateApplication();
 
 int main(int argc, char** argv)
 {
-    Cola::Log::Init();
+    COLA::Log::Init();
     COLA_CORE_WARN("初始化引擎日志");
     COLA_CLIENT_INFO("初始化客户端日志");
-    auto app = Cola::CreateApplication();
+    auto app = COLA::CreateApplication();
     app->Run();
 
     delete app;

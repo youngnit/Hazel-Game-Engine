@@ -3,7 +3,7 @@
 #include "Events.h"
 
 
-namespace Cola
+namespace COLA
 {
     class COLA_API KeyEvent : public Event
     {
@@ -22,7 +22,7 @@ namespace Cola
         std::string ToString() const override
         {
             std::stringstream ss;
-            ss << "KeyboardEvent: " << m_KeyCode << "(" << m_RepeatCount << "repeats)";
+            ss << "键盘事件: " << m_KeyCode << " (" << m_RepeatCount << "repeats)";
             return ss.str();
         }
         EVENT_CLASS_TYPE(KeyPressed)
@@ -36,7 +36,7 @@ namespace Cola
         std::string ToString() const override
         {
             std::stringstream ss;
-            ss << "KeyReleaseEvent: " << m_KeyCode ;
+            ss << "键盘按键释放事件: " << m_KeyCode ;
             return ss.str();
         }
         EVENT_CLASS_TYPE(KeyReleased)

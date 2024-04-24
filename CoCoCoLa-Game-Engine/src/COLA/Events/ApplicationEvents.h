@@ -1,8 +1,8 @@
 ﻿#pragma once
-
+#include "COLA/Core.h"
 #include "Events.h"
 
-namespace Cola
+namespace COLA
 {
     class COLA_API WindowResizeEvent : public Event
     {
@@ -13,7 +13,7 @@ namespace Cola
         std::string ToString() const override
         {
             std::stringstream ss;
-            ss << "WindowResizeEvent: " << m_Width << "," << m_Height;
+            ss << "窗口改变大小事件: " << m_Width << "," << m_Height;
             return ss.str();
         }
         EVENT_CLASS_TYPE(WindowResize)
@@ -25,6 +25,12 @@ namespace Cola
     {
     public:
         WindowCloseEvent() {}
+        std::string ToString() const override
+        {
+            std::stringstream ss;
+            ss << "窗口关闭";
+            return ss.str();
+        }
         EVENT_CLASS_TYPE(WindowClose)
         EVENT_CLASS_CATEGORY(EventCategoryApplication)
     };

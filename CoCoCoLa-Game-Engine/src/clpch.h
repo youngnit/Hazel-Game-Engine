@@ -15,6 +15,8 @@
 #include <stack>
 
 
+#include "CoLa/Log.h"
+
 
 #ifdef COLA_PLATFORM_WINDOWS
     #include <Windows.h>
