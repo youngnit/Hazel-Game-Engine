@@ -9,7 +9,7 @@
 namespace COLA {
 
     static bool s_GLFWInitialized = false;
-    
+
     static void GLFWErrorCallback(int error, const char* description)
     {
         COLA_CORE_ERROR("GLFW Error ({0}): {1}", error, description);
@@ -49,6 +49,9 @@ namespace COLA {
 
         m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
         glfwMakeContextCurrent(m_Window);
+
+        int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+        COLA_CORE_ASSERT(status, "初始化glad失败!");
         glfwSetWindowUserPointer(m_Window, &m_Data);
         SetVSync(true);
 
@@ -78,24 +81,24 @@ namespace COLA {
                 WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
                 switch (action)
                 {
-                    case GLFW_PRESS:
-                    {
-                        KeyPressEvent event(key, 0);
-                        data.EventCallback(event);
-                        break;
-                    }
-                    case GLFW_RELEASE:
-                    {
-                        KeyReleasedEvent event(key);
-                        data.EventCallback(event);
-                        break;
-                    }
-                    case GLFW_REPEAT:
-                    {
-                        KeyPressEvent event(key, 1);
-                        data.EventCallback(event);
-                        break;
-                    }
+                case GLFW_PRESS:
+                {
+                    KeyPressedEvent event(key, 0);
+                    data.EventCallback(event);
+                    break;
+                }
+                case GLFW_RELEASE:
+                {
+                    KeyReleasedEvent event(key);
+                    data.EventCallback(event);
+                    break;
+                }
+                case GLFW_REPEAT:
+                {
+                    KeyPressedEvent event(key, 1);
+                    data.EventCallback(event);
+                    break;
+                }
                 }
             }
         );
@@ -104,19 +107,19 @@ namespace COLA {
                 WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
                 switch (action)
                 {
-                    case GLFW_PRESS:
-                    {
-                        MouseButtonPressedEvent event(button);
-                        data.EventCallback(event);
-                        break;
+                case GLFW_PRESS:
+                {
+                    MouseButtonPressedEvent event(button);
+                    data.EventCallback(event);
+                    break;
 
-                    }
-                    case GLFW_RELEASE:
-                    {
-                        MouseButtonReleasedEvent event(button);
-                        data.EventCallback(event);
-                        break;
-                    }
+                }
+                case GLFW_RELEASE:
+                {
+                    MouseButtonReleasedEvent event(button);
+                    data.EventCallback(event);
+                    break;
+                }
                 }
             }
         );

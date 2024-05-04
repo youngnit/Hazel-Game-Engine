@@ -7,12 +7,18 @@ workspace "CoCoCoLa-Game-Engine"
         "Release",
         "Dist"
     }
+    startproject "Application-Sandbox"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "CoCoCoLa-Game-Engine/vendor/GLFW/include"
+IncludeDir["Glad"] = "CoCoCoLa-Game-Engine/vendor/Glad/include"
+IncludeDir["ImGui"] = "CoCoCoLa-Game-Engine/vendor/imgui"
 
 include "CoCoCoLa-Game-Engine/vendor/GLFW"
+include "CoCoCoLa-Game-Engine/vendor/Glad"
+include "CoCoCoLa-Game-Engine/vendor/imgui"
+
 
 project "CoCoCoLa-Game-Engine"
     location "%{prj.name}"
@@ -38,11 +44,15 @@ project "CoCoCoLa-Game-Engine"
     {
         "%{prj.name}/vendor/spdlog/include",
         "%{prj.name}/src",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}",
+        "%{IncludeDir.ImGui}"
     }
     links
     {
         "GLFW",
+        "Glad",
+        "ImGui",
         "opengl32.lib"
     }
     
@@ -68,20 +78,23 @@ project "CoCoCoLa-Game-Engine"
         
     
     filter "configurations:Debug"
-        defines "COLA_DEBUG"
-        symbols "On"
         defines
         {
+            "COLA_DEBUG",
             "COLA_ENABLE_ASSERTS"
         }
+        buildoptions "/MDd"
+        symbols "On"
 
 
     filter "configurations:Release"
         defines "COLA_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
     filter "configurations:Dist"
         defines "COLA_DIST"
+        buildoptions "/MD"
         optimize "On"
 
 project "Application-Sandbox"
@@ -127,11 +140,15 @@ project "Application-Sandbox"
 
     filter "configurations:Debug"
         defines "COLA_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
         
     filter "configurations:Release"
         defines "COLA_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
     filter "configurations:Dist"
         defines "COLA_DIST"
+        buildoptions "/MD"
+		optimize "On"

@@ -19,3 +19,5 @@
 #define COLA_CLIENT_ASSERT(x, ...)
 #define COLA_CORE_ASSERT(x, ...)
 #endif
+
+#define COLA_BIND_EVENT_FN(x) std::bind(&x,this,std::placeholders::_1)
