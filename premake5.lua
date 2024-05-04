@@ -8,6 +8,8 @@ workspace "CoCoCoLa-Game-Engine"
         "Dist"
     }
     startproject "Application-Sandbox"
+
+
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
@@ -24,7 +26,7 @@ project "CoCoCoLa-Game-Engine"
     location "%{prj.name}"
     kind "SharedLib"
     language "C++"
-
+    staticruntime "off"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -72,35 +74,37 @@ project "CoCoCoLa-Game-Engine"
         }
         postbuildcommands
         {
-            ("copy %{wks.location}bin\\" .. outputdir .. "\\%{prj.name}\\%{prj.name}.dll %{wks.location}bin\\" .. outputdir .. "\\Application-Sandbox\\")
+            ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Application-Sandbox/\"")
         }
 
         
     
     filter "configurations:Debug"
-        defines
-        {
-            "COLA_DEBUG",
-            "COLA_ENABLE_ASSERTS"
-        }
-        buildoptions "/MDd"
+        defines "COLA_DEBUG"
+        staticruntime "off"
+        runtime "Debug"
         symbols "On"
 
 
     filter "configurations:Release"
         defines "COLA_RELEASE"
-        buildoptions "/MD"
+        staticruntime "off"
+        runtime "Release"
         optimize "On"
 
     filter "configurations:Dist"
         defines "COLA_DIST"
-        buildoptions "/MD"
+        staticruntime "off"
+        runtime "Release"
         optimize "On"
 
 project "Application-Sandbox"
     location "%{prj.name}"
     kind "ConsoleApp"
     language "C++"
+    
+
+
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
     files
@@ -140,15 +144,18 @@ project "Application-Sandbox"
 
     filter "configurations:Debug"
         defines "COLA_DEBUG"
-        buildoptions "/MDd"
+        staticruntime "off"
+        runtime "Debug"
         symbols "On"
         
     filter "configurations:Release"
         defines "COLA_RELEASE"
-        buildoptions "/MD"
+        staticruntime "off"
+        runtime "Release"
         optimize "On"
 
     filter "configurations:Dist"
         defines "COLA_DIST"
-        buildoptions "/MD"
+        staticruntime "off"
+        runtime "Release"
 		optimize "On"

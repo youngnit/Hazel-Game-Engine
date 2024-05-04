@@ -12,6 +12,11 @@
 
 #define BIT(x) (1 << x)
 
+#ifdef COLA_DEBUG
+    #define COLA_ENABLE_ASSERTS
+#endif // COLA_DEBUG
+
+
 #ifdef COLA_ENABLE_ASSERTS
 #define COLA_CLIENT_ASSERT(x, ...) { if(!(x)) { COLA_CLIENT_ERROR("断言失败: {0}", __VA_ARGS__); __debugbreak(); } }
 #define COLA_CORE_ASSERT(x, ...) { if(!(x)) { COLA_CORE_ERROR("断言失败: {0}", __VA_ARGS__); __debugbreak(); } }
