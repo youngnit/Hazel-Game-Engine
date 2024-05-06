@@ -16,6 +16,10 @@
 
 #include "COLA/ImGui/ImGuiLayer.h"
 
+#include "COLA/Input.h"
+#include "COLA/MouseButtonCodes.h"
+#include "COLA/KeyCodes.h"
+
 //----------程序入口点-----------
 #include "COLA/EntryPoint.h"
 //-----------------------------

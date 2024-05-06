@@ -22,7 +22,7 @@ namespace COLA
         std::string ToString() const override
         {
             std::stringstream ss;
-            ss << "键盘事件: " << m_KeyCode << " (" << m_RepeatCount << "repeats)";
+            ss << "键盘事件: " << (char)m_KeyCode << " (" << m_RepeatCount << "repeats)";
             return ss.str();
         }
         EVENT_CLASS_TYPE(KeyPressed)
@@ -36,7 +36,7 @@ namespace COLA
         std::string ToString() const override
         {
             std::stringstream ss;
-            ss << "键盘按键释放事件: " << m_KeyCode ;
+            ss << "键盘按键释放事件: " << (char)m_KeyCode ;
             return ss.str();
         }
         EVENT_CLASS_TYPE(KeyReleased)
@@ -50,7 +50,7 @@ namespace COLA
         std::string ToString() const override
         {
             std::stringstream ss;
-            ss << "键盘类型事件: " << m_KeyCode;
+            ss << "键盘类型事件: " << (char)m_KeyCode;
             return ss.str();
         }
 

@@ -2,6 +2,8 @@
 #include "Application.h"
 
 #include "Core.h"
+#include "COLA/Input.h"
+
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -54,6 +56,7 @@ namespace COLA {
     bool Application::OnWindowClose(WindowCloseEvent& e)
     {
         m_CodeRunning = 0;
+        COLA_CLIENT_ERROR(e.ToString());
         return 1;
 
     }
@@ -71,7 +74,12 @@ namespace COLA {
             for (Layer* layer : m_LayerStack)
                 layer->OnUpdate();
 
+            //auto pos = Input::GetMousePosition();
+            //COLA_CORE_TRACE("{0}, {1}", std::get<0>(pos), std::get<1>(pos));
+           
             m_Window->OnUpdate();
+                
+            
         }
     }
 

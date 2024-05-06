@@ -1,0 +1,15 @@
+﻿#pragma once
+
+// From glfw3.h
+#define COLA_MOUSE_BUTTON_1         0
+#define COLA_MOUSE_BUTTON_2         1
+#define COLA_MOUSE_BUTTON_3         2
+#define COLA_MOUSE_BUTTON_4         3
+#define COLA_MOUSE_BUTTON_5         4
+#define COLA_MOUSE_BUTTON_6         5
+#define COLA_MOUSE_BUTTON_7         6
+#define COLA_MOUSE_BUTTON_8         7
+#define COLA_MOUSE_BUTTON_LAST      COLA_MOUSE_BUTTON_8
+#define COLA_MOUSE_BUTTON_LEFT      COLA_MOUSE_BUTTON_1
+#define COLA_MOUSE_BUTTON_RIGHT     COLA_MOUSE_BUTTON_2
+#define COLA_MOUSE_BUTTON_MIDDLE    COLA_MOUSE_BUTTON_3
