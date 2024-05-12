@@ -5,6 +5,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "COLA/Renderer/GraphicsContext.h"
+
 namespace COLA {
 
     class WindowsWindow : public Window
@@ -27,8 +29,9 @@ namespace COLA {
     private:
         virtual void Init(const WindowProps& props);
         virtual void Shutdown();
-    
+        
         GLFWwindow* m_Window;
+        GraphicsContext* m_Context;
 
         struct WindowData
         {

@@ -16,6 +16,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "CoCoCoLa-Game-Engine/vendor/GLFW/include"
 IncludeDir["Glad"] = "CoCoCoLa-Game-Engine/vendor/Glad/include"
 IncludeDir["ImGui"] = "CoCoCoLa-Game-Engine/vendor/imgui"
+IncludeDir["glm"] = "CoCoCoLa-Game-Engine/vendor/glm"
 
 include "CoCoCoLa-Game-Engine/vendor/GLFW"
 include "CoCoCoLa-Game-Engine/vendor/Glad"
@@ -24,9 +25,11 @@ include "CoCoCoLa-Game-Engine/vendor/imgui"
 
 project "CoCoCoLa-Game-Engine"
     location "%{prj.name}"
-    kind "SharedLib"
+    kind "StaticLib"
     language "C++"
-    staticruntime "off"
+    cppdialect "C++17"
+	staticruntime "on"
+    warnings "off"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -39,16 +42,23 @@ project "CoCoCoLa-Game-Engine"
         "%{prj.name}/src/**.h",
         "%{prj.name}/src/**.hpp",
         "%{prj.name}/src/**.c",
-        "%{prj.name}/src/**.cpp"
+        "%{prj.name}/src/**.cpp",
+        "%{prj.name}/vendor/glm/glm/**.hpp",
+        "%{prj.name}/vendor/glm/glm/**.inl"
     }
-
+    defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"
+	}
     includedirs
     {
         "%{prj.name}/vendor/spdlog/include",
         "%{prj.name}/src",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
-        "%{IncludeDir.ImGui}"
+        "%{IncludeDir.ImGui}",
+        "%{IncludeDir.glm}"
+        
     }
     links
     {
@@ -60,8 +70,6 @@ project "CoCoCoLa-Game-Engine"
     
 
     filter "system:windows"
-        cppdialect "C++17"
-        staticruntime "On"
         systemversion "latest"
 
         defines
@@ -71,39 +79,31 @@ project "CoCoCoLa-Game-Engine"
             "_WINDLL"--,
             --"_UNICODE",
             --"UNICODE"
-        }
-        postbuildcommands
-        {
-            ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Application-Sandbox/\"")
-        }
-
-        
+        }     
     
     filter "configurations:Debug"
         defines "COLA_DEBUG"
-        staticruntime "off"
         runtime "Debug"
-        symbols "On"
+        symbols "on"
 
 
     filter "configurations:Release"
         defines "COLA_RELEASE"
-        staticruntime "off"
         runtime "Release"
-        optimize "On"
+        optimize "on"
 
     filter "configurations:Dist"
         defines "COLA_DIST"
-        staticruntime "off"
         runtime "Release"
-        optimize "On"
+        optimize "on"
 
 project "Application-Sandbox"
     location "%{prj.name}"
     kind "ConsoleApp"
     language "C++"
-    
-
+    cppdialect "C++17"
+    staticruntime "on"
+    warnings "off"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -118,7 +118,9 @@ project "Application-Sandbox"
     includedirs
     {
         "CoCoCoLa-Game-Engine/src",
-        "CoCoCoLa-Game-Engine/vendor/spdlog/include"
+        "CoCoCoLa-Game-Engine/vendor/spdlog/include",
+        "CoCoCoLa-Game-Engine/vendor",
+        "%{IncludeDir.glm}"
     }
 
     links
@@ -129,8 +131,6 @@ project "Application-Sandbox"
     
 
     filter "system:windows"
-        cppdialect "C++17"
-        staticruntime "On"
         systemversion "latest"
 
         defines
@@ -144,18 +144,15 @@ project "Application-Sandbox"
 
     filter "configurations:Debug"
         defines "COLA_DEBUG"
-        staticruntime "off"
         runtime "Debug"
-        symbols "On"
+        symbols "on"
         
     filter "configurations:Release"
         defines "COLA_RELEASE"
-        staticruntime "off"
         runtime "Release"
-        optimize "On"
+        optimize "on"
 
     filter "configurations:Dist"
         defines "COLA_DIST"
-        staticruntime "off"
         runtime "Release"
-		optimize "On"
+		optimize "on"
