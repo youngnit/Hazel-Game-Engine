@@ -13,6 +13,7 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <stack>
+#include <array>
 
 #include <ctime>
 #include <chrono>

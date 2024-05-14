@@ -8,6 +8,7 @@
 #include "COLA/Layer.h"
 #include "COLA/LayerStack.h"
 #include "COLA/Window.h"
+#include "COLA/OrthographicCameraController.h"
 
 #include "COLA/Events/ApplicationEvents.h"
 #include "COLA/Events/Events.h"
@@ -29,6 +30,8 @@
 #include "COLA/Renderer/Shader.h"
 #include "COLA/Renderer/VertexArray.h"
 #include "COLA/Renderer/Texture.h"
+#include "COLA/Renderer/OrthographicCamera.h"
+
 
 #include "Platform/OpenGL/OpenGLShader.h"
 #include "Platform/OpenGL/OpenGLTexture.h"
