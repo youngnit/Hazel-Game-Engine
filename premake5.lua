@@ -17,6 +17,8 @@ IncludeDir["GLFW"] = "CoCoCoLa-Game-Engine/vendor/GLFW/include"
 IncludeDir["Glad"] = "CoCoCoLa-Game-Engine/vendor/Glad/include"
 IncludeDir["ImGui"] = "CoCoCoLa-Game-Engine/vendor/imgui"
 IncludeDir["glm"] = "CoCoCoLa-Game-Engine/vendor/glm"
+IncludeDir["stb_image"] = "CoCoCoLa-Game-Engine/vendor/stb_image"
+
 
 include "CoCoCoLa-Game-Engine/vendor/GLFW"
 include "CoCoCoLa-Game-Engine/vendor/Glad"
@@ -44,7 +46,9 @@ project "CoCoCoLa-Game-Engine"
         "%{prj.name}/src/**.c",
         "%{prj.name}/src/**.cpp",
         "%{prj.name}/vendor/glm/glm/**.hpp",
-        "%{prj.name}/vendor/glm/glm/**.inl"
+        "%{prj.name}/vendor/glm/glm/**.inl",
+        "%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp"
     }
     defines
 	{
@@ -57,7 +61,8 @@ project "CoCoCoLa-Game-Engine"
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
         "%{IncludeDir.ImGui}",
-        "%{IncludeDir.glm}"
+        "%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
         
     }
     links

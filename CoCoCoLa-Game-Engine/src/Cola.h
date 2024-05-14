@@ -20,6 +20,20 @@
 #include "COLA/MouseButtonCodes.h"
 #include "COLA/KeyCodes.h"
 
+#include "COLA/Renderer/Buffer.h"
+#include "COLA/Renderer/GraphicsContext.h"
+#include "COLA/Renderer/OrthographicCamera.h"
+#include "COLA/Renderer/RenderCommand.h"
+#include "COLA/Renderer/Renderer.h"
+#include "COLA/Renderer/RendererAPI.h"
+#include "COLA/Renderer/Shader.h"
+#include "COLA/Renderer/VertexArray.h"
+#include "COLA/Renderer/Texture.h"
+
+#include "Platform/OpenGL/OpenGLShader.h"
+#include "Platform/OpenGL/OpenGLTexture.h"
+
+#include "COLA/CORE/Timestep.h"
 //----------程序入口点-----------
 #include "COLA/EntryPoint.h"
 //-----------------------------
