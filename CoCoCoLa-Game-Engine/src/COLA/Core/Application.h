@@ -1,12 +1,12 @@
 ﻿#pragma once
 
 #include "COLA/Core/Timestep.h"
+#include "COLA/Core/Core.h"
+#include "COLA/Core/Window.h"
+#include "COLA/Core/LayerStack.h"
 
-#include "COLA/Core.h"
-#include "COLA/Window.h"
 #include "COLA/Events/ApplicationEvents.h"
 #include "COLA/Events/Events.h"
-#include "COLA/LayerStack.h"
 #include "COLA/ImGui/ImGuiLayer.h"
 
 
@@ -28,6 +28,7 @@ namespace COLA
 
     private:
         bool OnWindowClose(WindowCloseEvent& e);
+        bool OnWindowResize(WindowResizeEvent& e);
 
     private:
         std::unique_ptr<Window> m_Window;
@@ -36,6 +37,7 @@ namespace COLA
         LayerStack m_LayerStack;
         static Application* s_Instance;
         float m_LastFrameTime = 0.0f;
+        bool m_Minimized = false;
     };
     //在客户端定义
     Application* CreateApplication();

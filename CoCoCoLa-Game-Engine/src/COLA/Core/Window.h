@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 
-#include "COLA/Core.h"
+#include "COLA/Core/Core.h"
 #include "COLA/Events/Events.h"
 
 namespace COLA {

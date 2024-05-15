@@ -10,8 +10,8 @@
 
 #include "GLFW/glfw3.h"
 
-#include "COLA/Application.h"
-#include "COLA/Core.h"
+#include "COLA/Core/Application.h"
+#include "COLA/Core/Core.h"
 namespace COLA {
     ImGuiLayer::ImGuiLayer()
         :Layer("ImGui层")

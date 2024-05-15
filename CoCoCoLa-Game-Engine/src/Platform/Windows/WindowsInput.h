@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "COLA/Input.h"
+#include "COLA/Core/Input.h"
 
 namespace COLA
 {

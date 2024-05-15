@@ -1,8 +1,8 @@
 ﻿#include "clpch.h"
 #include "OrthographicCameraController.h"
 
-#include "COLA/Input.h"
-#include "COLA/KeyCodes.h"
+#include "COLA/Core/Input.h"
+#include "COLA/Core/KeyCodes.h"
 
 namespace COLA {
 

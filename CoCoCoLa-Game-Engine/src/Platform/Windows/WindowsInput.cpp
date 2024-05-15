@@ -1,7 +1,7 @@
 ﻿#include "clpch.h"
 
 #include "WindowsInput.h"
-#include "COLA/Application.h"
+#include "COLA/Core/Application.h"
 
 
 #include <GLFW/glfw3.h>

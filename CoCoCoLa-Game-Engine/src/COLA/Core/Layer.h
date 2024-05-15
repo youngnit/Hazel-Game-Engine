@@ -1,8 +1,8 @@
 ﻿#pragma once
 
 #include "Core.h"
-#include "Core/Timestep.h"
-#include "Events/Events.h"
+#include "COLA/Core/Timestep.h"
+#include "COLA/Events/Events.h"
 
 namespace COLA {
     class COLA_API Layer

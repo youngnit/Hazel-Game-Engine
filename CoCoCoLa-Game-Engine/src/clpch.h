@@ -18,7 +18,7 @@
 #include <ctime>
 #include <chrono>
 
-#include "CoLa/Log.h"
+#include "CoLa/Core/Log.h"
 
 
 #ifdef COLA_PLATFORM_WINDOWS

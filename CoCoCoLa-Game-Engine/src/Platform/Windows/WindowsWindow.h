@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "COLA/Window.h"
+#include "COLA/Core/Window.h"
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>

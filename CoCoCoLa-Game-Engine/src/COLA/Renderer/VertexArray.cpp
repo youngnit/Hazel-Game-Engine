@@ -6,12 +6,12 @@
 
 namespace COLA {
 
-    VertexArray* VertexArray::Create()
+    Ref<VertexArray> VertexArray::Create()
     {
         switch (Renderer::GetAPI())
         {
         case RendererAPI::API::None:    COLA_CORE_ASSERT(false, "RendererAPI::目前不支持!"); return nullptr;
-        case RendererAPI::API::OpenGL:  return new OpenGLVertexArray();
+        case RendererAPI::API::OpenGL:  return std::make_shared<OpenGLVertexArray>();
         }
 
         COLA_CORE_ASSERT(false, "未知 RendererAPI!");
